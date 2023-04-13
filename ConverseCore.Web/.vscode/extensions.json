@@ -6,6 +6,7 @@
         "mskelton.npm-outdated",
         "davidanson.vscode-markdownlint",
         "ardenivanov.svelte-intellisense",
-        "fivethree.vscode-svelte-snippets"
+        "fivethree.vscode-svelte-snippets",
+        "ms-playwright.playwright"
     ]
 }

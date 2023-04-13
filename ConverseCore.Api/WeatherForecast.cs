@@ -4,9 +4,14 @@ public class WeatherForecast
 {
     public DateOnly Date { get; set; }
 
-    public int TemperatureC { get; set; }
-
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    public Temperature Temperature { get; set; } = new();
 
     public string? Summary { get; set; }
+}
+
+public class Temperature
+{
+    public int Celsius { get; set; }
+
+    public int Fahrenheit => 32 + (int)(Celsius / 0.5556);
 }

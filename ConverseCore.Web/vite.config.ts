@@ -35,8 +35,17 @@ export default defineConfig({
             cert: fs.readFileSync(certFilePath)
         },
         proxy: {
-            '^/weatherforcast': {
-                target: 'https://localhost:7078/'
+            '/api': {
+                target: 'https://localhost:7184/',
+                changeOrigin: true,
+                secure: false,
+                rewrite: (path) => path.replace(/^\/api/, '')
+            },
+            '/jph': {
+                target: 'https://jsonplaceholder.typicode.com',
+                changeOrigin: true,
+                secure: false,
+                rewrite: (path) => path.replace(/^\/jph/, '')
             }
         },
         port: 5002
