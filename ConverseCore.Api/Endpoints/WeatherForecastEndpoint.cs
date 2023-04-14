@@ -10,7 +10,7 @@ public class WeatherForecastEndpoint : EndpointWithoutRequest<IEnumerable<Weathe
     public override void Configure()
     {
         Get("/WeatherForecast");
-        AllowAnonymous();
+        Permissions("read:weather");
     }
 
     public override async Task HandleAsync(CancellationToken ct)

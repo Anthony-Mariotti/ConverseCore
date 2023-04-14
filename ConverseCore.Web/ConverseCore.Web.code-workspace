@@ -5,6 +5,7 @@
         }
     ],
     "settings": {
-        "git.branchProtection": ["main"]
+        "git.branchProtection": ["main"],
+        "debug.allowBreakpointsEverywhere": true
     }
 }

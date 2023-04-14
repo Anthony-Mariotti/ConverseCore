@@ -1,13 +1,29 @@
 using FastEndpoints.Swagger;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddFastEndpoints();
 builder.Services.AddSwaggerDoc();
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        var audience = builder.Configuration.GetValue<string>("AUTH0_AUDIENCE");
+
+        options.Authority = $"https://{builder.Configuration.GetValue<string>("AUTH0_DOMAIN")}/";
+        options.Audience = audience;
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateAudience = true,
+            ValidateIssuerSigningKey = true,
+        };
+    });
 
 var app = builder.Build();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseFastEndpoints();
