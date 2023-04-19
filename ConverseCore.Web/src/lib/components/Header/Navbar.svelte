@@ -1,4 +1,7 @@
 <script lang="ts">
+    import NavbarMenu from './NavbarMenu.svelte';
+    import { isAuthenticated, login, logout } from '$lib/stores/auth.store';
+
     let mobileOpen = false;
     let accountOpen = false;
 </script>
@@ -13,6 +16,7 @@
                     class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                     aria-controls="mobile-menu"
                     aria-expanded="false"
+                    on:click={() => (mobileOpen = !mobileOpen)}
                 >
                     <span class="sr-only">Open main menu</span>
                     <!--
@@ -21,7 +25,9 @@
               Menu open: "hidden", Menu closed: "block"
             -->
                     <svg
-                        class="block h-6 w-6"
+                        class="h-6 w-6"
+                        class:block={mobileOpen !== true}
+                        class:hidden={mobileOpen === true}
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke-width="1.5"
@@ -41,6 +47,8 @@
             -->
                     <svg
                         class="hidden h-6 w-6"
+                        class:block={mobileOpen === true}
+                        class:hidden={mobileOpen !== true}
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke-width="1.5"
@@ -151,71 +159,91 @@
                     </div>
                 </div>
             </div>
-            <div
-                class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 space-x-2"
-            >
-                <button
-                    type="button"
-                    class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                >
-                    <span class="sr-only">View notifications</span>
-                    <svg
-                        class="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        aria-hidden="true"
+            <div>
+                {#if !$isAuthenticated}
+                    <button
+                        type="button"
+                        class="relative inline-flex items-center gap-x-1.5 rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                        on:click={() => login()}
                     >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
-                        />
-                    </svg>
-                </button>
-
-                <button
-                    type="button"
-                    class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                >
-                    <span class="sr-only">View messages</span>
-                    <svg
-                        class="w-6 h-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"
-                        />
-                    </svg>
-                </button>
-
-                <!-- Profile dropdown -->
-                <div class="relative">
-                    <div>
-                        <button
-                            type="button"
-                            class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                            id="user-menu-button"
-                            aria-expanded="false"
-                            aria-haspopup="true"
-                            on:click={() => (accountOpen = !accountOpen)}
-                        >
-                            <span class="sr-only">Open user menu</span>
-                            <img
-                                class="h-8 w-8 rounded-full"
-                                src="https://placehold.co/256x256.png?text=TN"
-                                alt=""
+                        <svg class="-ml-0.5 h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                fill-rule="evenodd"
+                                d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3c0-2.9-2.35-5.25-5.25-5.25zm3.75 8.25v-3a3.75 3.75 0 10-7.5 0v3h7.5z"
+                                clip-rule="evenodd"
                             />
-                        </button>
-                    </div>
+                        </svg>
 
-                    <!--
+                        Login
+                    </button>
+                {/if}
+            </div>
+            {#if $isAuthenticated}
+                <div
+                    class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 space-x-2"
+                >
+                    <button
+                        type="button"
+                        class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                    >
+                        <span class="sr-only">View notifications</span>
+                        <svg
+                            class="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            aria-hidden="true"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
+                            />
+                        </svg>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                    >
+                        <span class="sr-only">View messages</span>
+                        <svg
+                            class="w-6 h-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"
+                            />
+                        </svg>
+                    </button>
+
+                    <!-- Profile dropdown -->
+                    <div class="relative">
+                        <div>
+                            <button
+                                type="button"
+                                class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                                id="user-menu-button"
+                                aria-expanded="false"
+                                aria-haspopup="true"
+                                on:click={() => (accountOpen = !accountOpen)}
+                            >
+                                <span class="sr-only">Open user menu</span>
+                                <img
+                                    class="h-8 w-8 rounded-full"
+                                    src="https://placehold.co/256x256.png?text=TN"
+                                    alt=""
+                                />
+                            </button>
+                        </div>
+
+                        <!--
               Dropdown menu, show/hide based on menu state.
   
               Entering: "transition ease-out duration-100"
@@ -225,40 +253,44 @@
                 From: "transform opacity-100 scale-100"
                 To: "transform opacity-0 scale-95"
             -->
-                    {#if accountOpen}
-                        <div
-                            class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                            role="menu"
-                            aria-orientation="vertical"
-                            aria-labelledby="user-menu-button"
-                            tabindex="-1"
-                        >
-                            <!-- Active: "bg-gray-100", Not Active: "" -->
-                            <a
-                                href="/profile"
-                                class="block px-4 py-2 text-sm text-gray-700"
-                                role="menuitem"
+                        {#if accountOpen}
+                            <div
+                                class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                role="menu"
+                                aria-orientation="vertical"
+                                aria-labelledby="user-menu-button"
                                 tabindex="-1"
-                                id="user-menu-item-0">Your Profile</a
                             >
-                            <a
-                                href="/"
-                                class="block px-4 py-2 text-sm text-gray-700"
-                                role="menuitem"
-                                tabindex="-1"
-                                id="user-menu-item-1">Settings</a
-                            >
-                            <a
-                                href="/"
-                                class="block px-4 py-2 text-sm text-gray-700"
-                                role="menuitem"
-                                tabindex="-1"
-                                id="user-menu-item-2">Sign out</a
-                            >
-                        </div>
-                    {/if}
+                                <!-- Active: "bg-gray-100", Not Active: "" -->
+                                <a
+                                    href="/profile"
+                                    class="block px-4 py-2 text-sm text-gray-700"
+                                    role="menuitem"
+                                    tabindex="-1"
+                                    id="user-menu-item-0">Your Profile</a
+                                >
+                                <a
+                                    href="/"
+                                    class="block px-4 py-2 text-sm text-gray-700"
+                                    role="menuitem"
+                                    tabindex="-1"
+                                    id="user-menu-item-1">Settings</a
+                                >
+                                <button
+                                    class="block px-4 py-2 text-sm text-gray-700"
+                                    role="menuitem"
+                                    tabindex="-1"
+                                    on:click={() => logout()}
+                                    id="user-menu-item-2">Sign out</button
+                                >
+                            </div>
+                        {/if}
+                    </div>
                 </div>
-            </div>
+            {/if}
         </div>
     </div>
+    {#if mobileOpen}
+        <NavbarMenu />
+    {/if}
 </nav>

@@ -33,6 +33,12 @@ export const initializeAuth0 = async () => {
 
     const onRedirectCallback = (state?: RedirectLoginResult) => {
         window.history.replaceState({}, document.title, window.location.pathname);
+
+        if (state?.appState.previous_url) {
+            window.location.replace(state.appState.previous_url);
+        }
+
+        console.log(state);
     };
 
     try {
@@ -53,6 +59,14 @@ export const initializeAuth0 = async () => {
 };
 
 export const login = async (options?: RedirectLoginOptions): Promise<void> => {
+    if (!options) {
+        options = {
+            appState: {
+                previous_url: window.location.href
+            }
+        };
+    }
+
     return await get(client)?.loginWithRedirect(options);
 };
 

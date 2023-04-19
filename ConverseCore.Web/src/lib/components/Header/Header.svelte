@@ -28,5 +28,6 @@
         background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
             url('$lib/images/1200x300.svg');
         background-position: center;
+        background-size: cover;
     }
 </style>
