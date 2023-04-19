@@ -13,7 +13,7 @@
 <div class="app bg-gray-900 grid grid-rows-[auto_1fr_auto] grid-cols-[100%] min-h-screen">
     <Header />
 
-    <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+    <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 w-full">
         <slot />
     </main>
 
