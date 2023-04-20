@@ -87,9 +87,10 @@
                             >New <span class="sr-only">post</span></span
                         >
                         <a
-                            href="/topic/pcbuilding/post/gB0NV05e-how_to_build_a_pc"
+                            href="/topic/programming/post/gB0NV05e-i_literally_do_not_know_how_to_code"
                             class="hover:underline"
-                            >Atque perspiciatis et et aut ut porro voluptatem blanditiis?</a
+                            >I literally do not know how to code, but with chatGPT, I've managed to
+                            build a (sort of) working chrome extension in one day.</a
                         >
                     </p>
                     <div
@@ -131,21 +132,21 @@
                         <dt class="sr-only">Commenters</dt>
                         <dd>
                             <img
-                                class="h-6 w-6 rounded-full"
+                                class="h-6 w-6 rounded-full border border-gray-900"
                                 src="https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                 alt="Emma Dorsey"
                             />
                         </dd>
                         <dd>
                             <img
-                                class="h-6 w-6 rounded-full"
+                                class="h-6 w-6 rounded-full border border-gray-900"
                                 src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                 alt="Benjamin Russel"
                             />
                         </dd>
                         <dd>
                             <img
-                                class="h-6 w-6 rounded-full"
+                                class="h-6 w-6 rounded-full border border-gray-900"
                                 src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                 alt="Dries Vincent"
                             />
@@ -210,21 +211,21 @@
                         <dt class="sr-only">Commenters</dt>
                         <dd>
                             <img
-                                class="h-6 w-6 rounded-full"
+                                class="h-6 w-6 rounded-full border border-gray-900"
                                 src="https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                 alt="Alicia Bell"
                             />
                         </dd>
                         <dd>
                             <img
-                                class="h-6 w-6 rounded-full"
+                                class="h-6 w-6 rounded-full border border-gray-900"
                                 src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                 alt="Benjamin Russel"
                             />
                         </dd>
                         <dd>
                             <img
-                                class="h-6 w-6 rounded-full"
+                                class="h-6 w-6 rounded-full border border-gray-900"
                                 src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                 alt="Dries Vincent"
                             />
@@ -286,28 +287,28 @@
                         <dt class="sr-only">Commenters</dt>
                         <dd>
                             <img
-                                class="h-6 w-6 rounded-full"
+                                class="h-6 w-6 rounded-full border border-gray-900"
                                 src="https://images.unsplash.com/photo-1513910367299-bce8d8a0ebf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                 alt="Lawrence Hunter"
                             />
                         </dd>
                         <dd>
                             <img
-                                class="h-6 w-6 rounded-full"
+                                class="h-6 w-6 rounded-full border border-gray-900"
                                 src="https://images.unsplash.com/photo-1501031170107-cfd33f0cbdcc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                 alt="Angela Fisher"
                             />
                         </dd>
                         <dd>
                             <img
-                                class="h-6 w-6 rounded-full"
+                                class="h-6 w-6 rounded-full border border-gray-900"
                                 src="https://images.unsplash.com/photo-1507101105822-7472b28e22ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                 alt="Jenny Wilson"
                             />
                         </dd>
                         <dd>
                             <img
-                                class="h-6 w-6 rounded-full"
+                                class="h-6 w-6 rounded-full border border-gray-900"
                                 src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                 alt="Benjamin Russel"
                             />
@@ -373,14 +374,14 @@
                         <dt class="sr-only">Commenters</dt>
                         <dd>
                             <img
-                                class="h-6 w-6 rounded-full"
+                                class="h-6 w-6 rounded-full border border-gray-900"
                                 src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                 alt="Emily Selman"
                             />
                         </dd>
                         <dd>
                             <img
-                                class="h-6 w-6 rounded-full"
+                                class="h-6 w-6 rounded-full border border-gray-900"
                                 src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                 alt="Kristin Watson"
                             />
@@ -435,28 +436,28 @@
                         <dt class="sr-only">Commenters</dt>
                         <dd>
                             <img
-                                class="h-6 w-6 rounded-full"
+                                class="h-6 w-6 rounded-full border border-gray-900"
                                 src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                 alt="Kristin Watson"
                             />
                         </dd>
                         <dd>
                             <img
-                                class="h-6 w-6 rounded-full"
+                                class="h-6 w-6 rounded-full border border-gray-900"
                                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                 alt="Tom Cook"
                             />
                         </dd>
                         <dd>
                             <img
-                                class="h-6 w-6 rounded-full"
+                                class="h-6 w-6 rounded-full border border-gray-900"
                                 src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                 alt="Emily Selman"
                             />
                         </dd>
                         <dd>
                             <img
-                                class="h-6 w-6 rounded-full"
+                                class="h-6 w-6 rounded-full border border-gray-900"
                                 src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                 alt="Benjamin Russel"
                             />
@@ -493,6 +494,6 @@
 <h1 class="text-white">Topic with id</h1>
 <p class="text-white">{JSON.stringify($page.params)}</p>
 <br />
-<a href="/topic/pcbuilding/post/gB0NV05e-how_to_build_a_pc" class="text-white bg-black px-4 py-2"
+<a href="/topic/programming/post/gB0NV05e-how_to_build_a_pc" class="text-white bg-black px-4 py-2"
     >Show Post</a
 >
